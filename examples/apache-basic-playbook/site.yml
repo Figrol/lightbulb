@@ -13,13 +13,13 @@
     - name: Ensure httpd packages are present
       yum:
         name: httpd
-        state: present
+        state: latest
       notify: restart-apache-service
       
     - name: Ensure mod_wsgi is installed
       yum: 
         name: mod_wsgi
-        state: present
+        state: latest
       notify: restart-apache-service
 
     - name: Ensure site-enabled directory is present
