@@ -12,9 +12,14 @@
   tasks:
     - name: Ensure httpd packages are present
       yum:
-        name: "{{ item }}"
+        name: httpd
         state: present
-      with_items: "{{ httpd_packages }}"
+      notify: restart-apache-service
+      
+    - name: Ensure mod_wsgi is installed
+      yum: 
+        name: mod_wsgi
+        state: present
       notify: restart-apache-service
 
     - name: Ensure site-enabled directory is present
