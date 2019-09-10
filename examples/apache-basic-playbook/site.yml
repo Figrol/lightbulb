@@ -47,10 +47,10 @@
         
     - name: Ensure firewall is open
       firewalld:
-        port: 80/tcp
+        service: http
         permanent: yes
-        enabled: yes
-
+        state: enabled
+        immediate: yes
   handlers:
     - name: restart-apache-service
       service:
