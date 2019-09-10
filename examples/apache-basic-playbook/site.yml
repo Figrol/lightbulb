@@ -47,7 +47,7 @@
         
     - name: Ensure firewall is open
       firewalld:
-        service: http
+        port: 80/tcp
         permanent: yes
         enabled: yes
 
