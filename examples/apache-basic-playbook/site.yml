@@ -40,7 +40,7 @@
 
     - name: Ensure httpd is started and enabled
       service:
-        name: httpd
+        name: http
         state: started
         enabled: yes
         
