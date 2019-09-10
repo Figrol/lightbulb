@@ -40,14 +40,14 @@
 
     - name: Ensure httpd is started and enabled
       service:
-        name: http
+        name: httpd
         state: started
         enabled: yes
         
         
     - name: Ensure firewall is open
       firewalld:
-        service: httpd
+        service: http
         permanent: yes
         enabled: yes
         immediate: true
