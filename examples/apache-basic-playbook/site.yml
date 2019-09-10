@@ -41,9 +41,8 @@
     - name: Ensure httpd is started and enabled
       service:
         name: httpd
-        permanent: yes
-        state: enabled
-        immediate: true
+        state: started
+        enabled: yes
         
         
     - name: Ensure firewall is open
@@ -51,6 +50,8 @@
         service: httpd
         permanent: yes
         enabled: yes
+        immediate: true
+
 
   handlers:
     - name: restart-apache-service
